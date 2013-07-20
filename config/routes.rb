@@ -1,5 +1,7 @@
 RecipeApp::Application.routes.draw do
 
+root :to => 'recipes#index'
+
   # Routes for the Comment resource:
   # CREATE
   get '/comments/new', controller: 'comments', action: 'new', as: 'new_comment'
@@ -33,10 +35,6 @@ RecipeApp::Application.routes.draw do
   # DELETE
   delete '/ingredients/:id', controller: 'ingredients', action: 'destroy'
   #------------------------------
-
-  get "session/new"
-
-root :to => 'recipes#index'
 
 #Session routes
   get '/login', controller: 'sessions', action: 'new'
