@@ -1,0 +1,32 @@
+<h1>Ingredients</h1>
+
+<p><%= link_to 'Add a New Ingredient', new_ingredient_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Recipe</th>
+      <th>Amount</th>
+      <th>Ingredname</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @ingredients.each do |ingredient| %>
+    <tr>
+      <td><%= ingredient.recipe_id %></td>
+      <td><%= ingredient.amount %></td>
+      <td><%= ingredient.ingredname %></td>
+  
+      <td><%= link_to 'Show', ingredient_url(ingredient) %></td>
+      <td><%= link_to 'Edit', edit_ingredient_url(ingredient) %></td>
+      <td><%= link_to 'Destroy', ingredient_url(ingredient), method: 'delete', data: { confirm: "Do you really want to delete this ingredient?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

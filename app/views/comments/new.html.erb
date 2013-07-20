@@ -1,0 +1,26 @@
+<h1>New Comment</h1>
+
+
+<%= form_tag(comments_url, method: 'post') do %>
+
+
+  <div>
+    <%= label_tag :recipe_id %><br />
+    <%= number_field_tag :recipe_id %>
+  </div>
+
+  <div>
+    <%= label_tag :user_id %><br />
+    <%= number_field_tag :user_id %>
+  </div>
+
+  <div>
+    <%= label_tag :notes %><br />
+    <%= text_field_tag :notes %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Create Comment" %>
+  </div>
+<% end %>

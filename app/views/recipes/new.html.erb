@@ -1,0 +1,39 @@
+<h1>New Recipe</h1>
+<%= form_tag(recipes_url, method: 'post') do %>
+
+
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name %>
+  </div>
+
+  <div>
+    <%= label_tag :yield %><br />
+    <%= number_field_tag :yield %>
+  </div>
+
+  <div>
+    <%= label_tag :preptime %><br />
+    <%= number_field_tag :preptime %>
+  </div>
+
+  <div>
+    <%= label_tag :cooktime %><br />
+    <%= number_field_tag :cooktime %>
+  </div>
+
+  <div>
+    <%= label_tag :user_id %><br />
+    <%= number_field_tag :user_id %>
+  </div>
+
+  <div>
+    <%= label_tag :instructions %><br />
+    <%= text_field_tag :instructions %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Create Recipe" %>
+  </div>
+<% end %>

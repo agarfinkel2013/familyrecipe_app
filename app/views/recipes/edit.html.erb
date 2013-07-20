@@ -1,0 +1,41 @@
+<h1>Editing Recipe #<%= @recipe.id %></h1>
+
+
+<%= form_tag(recipe_url(@recipe), method: 'put') do %>
+
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name, @recipe.name %>
+  </div>
+
+  <div>
+    <%= label_tag :yield %><br />
+    <%= number_field_tag :yield, @recipe.yield %>
+  </div>
+
+  <div>
+    <%= label_tag :preptime %><br />
+    <%= number_field_tag :preptime, @recipe.preptime %>
+  </div>
+
+  <div>
+    <%= label_tag :cooktime %><br />
+    <%= number_field_tag :cooktime, @recipe.cooktime %>
+  </div>
+
+  <div>
+    <%= label_tag :user_id %><br />
+    <%= number_field_tag :user_id, @recipe.user_id %>
+  </div>
+
+  <div>
+    <%= label_tag :instructions %><br />
+    <%= text_field_tag :instructions, @recipe.instructions %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Recipe" %>
+  </div>
+
+<% end %>

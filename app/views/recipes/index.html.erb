@@ -1,0 +1,38 @@
+<h1>Recipes</h1>
+
+<p><%= link_to 'Add a New Recipe', new_recipe_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Yield</th>
+      <th>Preptime</th>
+      <th>Cooktime</th>
+      <th>User</th>
+      <th>Instructions</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @recipes.each do |recipe| %>
+    <tr>
+      <td><%= recipe.name %></td>
+      <td><%= recipe.yield %></td>
+      <td><%= recipe.preptime %></td>
+      <td><%= recipe.cooktime %></td>
+      <td><%= recipe.user_id %></td>
+      <td><%= recipe.instructions %></td>
+  
+      <td><%= link_to 'Show', recipe_url(recipe) %></td>
+      <td><%= link_to 'Edit', edit_recipe_url(recipe) %></td>
+      <td><%= link_to 'Destroy', recipe_url(recipe), method: 'delete', data: { confirm: "Do you really want to delete this recipe?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

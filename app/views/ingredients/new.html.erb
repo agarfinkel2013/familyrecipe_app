@@ -1,0 +1,26 @@
+<h1>New Ingredient</h1>
+
+
+<%= form_tag(ingredients_url, method: 'post') do %>
+
+
+  <div>
+    <%= label_tag :recipe_id %><br />
+    <%= number_field_tag :recipe_id %>
+  </div>
+
+  <div>
+    <%= label_tag :amount %><br />
+    <%= text_field_tag :amount %>
+  </div>
+
+  <div>
+    <%= label_tag :ingredname %><br />
+    <%= text_field_tag :ingredname %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Create Ingredient" %>
+  </div>
+<% end %>

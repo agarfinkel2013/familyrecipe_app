@@ -1,0 +1,26 @@
+<h1>Editing Comment #<%= @comment.id %></h1>
+
+
+<%= form_tag(comment_url(@comment), method: 'put') do %>
+
+  <div>
+    <%= label_tag :recipe_id %><br />
+    <%= number_field_tag :recipe_id, @comment.recipe_id %>
+  </div>
+
+  <div>
+    <%= label_tag :user_id %><br />
+    <%= number_field_tag :user_id, @comment.user_id %>
+  </div>
+
+  <div>
+    <%= label_tag :notes %><br />
+    <%= text_field_tag :notes, @comment.notes %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Comment" %>
+  </div>
+
+<% end %>

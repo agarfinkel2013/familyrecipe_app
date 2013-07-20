@@ -1,0 +1,26 @@
+<h1>Editing Ingredient #<%= @ingredient.id %></h1>
+
+
+<%= form_tag(ingredient_url(@ingredient), method: 'put') do %>
+
+  <div>
+    <%= label_tag :recipe_id %><br />
+    <%= number_field_tag :recipe_id, @ingredient.recipe_id %>
+  </div>
+
+  <div>
+    <%= label_tag :amount %><br />
+    <%= text_field_tag :amount, @ingredient.amount %>
+  </div>
+
+  <div>
+    <%= label_tag :ingredname %><br />
+    <%= text_field_tag :ingredname, @ingredient.ingredname %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Ingredient" %>
+  </div>
+
+<% end %>
